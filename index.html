@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browser Reviews</title>
+<style>
+  :root { --bg:#f5f5f7; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --blue:#0071e3; }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  [hidden] { display: none !important; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 10; height: 56px; padding: 0 24px;
+    display: flex; align-items: center; gap: 24px;
+    background: rgba(245,245,247,0.8); backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid #d2d2d7;
+  }
+  nav .brand { font-weight: 600; color: var(--text); text-decoration: none; white-space: nowrap; }
+  #links { display: flex; gap: 20px; flex: 1; overflow-x: auto; }
+  #links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; white-space: nowrap; }
+  #links a:hover { color: var(--text); }
+  #search {
+    width: 200px; padding: 8px 14px; border: 0; border-radius: 10px;
+    background: #e8e8ed; font: inherit; font-size: 0.9rem; color: var(--text);
+  }
+  #search:focus { outline: 2px solid var(--blue); background: #fff; }
+  header { text-align: center; padding: 72px 24px 56px; }
+  header h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+  header p { margin-top: 16px; font-size: 1.3rem; color: var(--muted); }
+  main { max-width: 980px; margin: 0 auto; padding: 0 24px 96px; }
+  section { margin-top: 56px; scroll-margin-top: 80px; }
+  section h2 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .app { background: var(--card); border-radius: 24px; padding: 32px; }
+  .logo {
+    position: relative; width: 64px; height: 64px; border-radius: 16px;
+    background: #e8e8ed; display: grid; place-items: center;
+    font-size: 1.6rem; font-weight: 700; color: var(--muted); overflow: hidden;
+  }
+  .logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .app h3 { font-size: 1.4rem; font-weight: 600; margin-top: 20px; }
+  .what { color: var(--muted); margin-top: 4px; }
+  .review { margin-top: 20px; padding-top: 20px; border-top: 1px solid #e8e8ed; }
+  .review strong { display: block; font-size: 0.9rem; color: var(--blue); margin-bottom: 4px; }
+  #empty { text-align: center; color: var(--muted); margin-top: 56px; }
+  @media (max-width: 700px) { #links { display: none; } nav { justify-content: space-between; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#">Browser Reviews</a>
+  <div id="links"></div>
+  <input id="search" type="search" placeholder="Search browsers" aria-label="Search browsers">
+</nav>
+
+<header>
+  <h1>Browsers, reviewed honestly.</h1>
+  <p>Honest reviews from someone who actually uses them.</p>
+</header>
+
+<main>
+
+  <!-- GROUP: copy a whole <section> to add a new group -->
+  <section>
+    <h2>Light on RAM</h2>
+    <div class="grid">
+
+      <!-- BROWSER CARD: copy a whole <div class="app"> to add another browser -->
+      <div class="app">
+        <div class="logo"><span>Z</span><img src="logos/zen.png" alt="" onerror="this.remove()"></div>
+        <h3>Zen</h3>
+        <p class="what">A sidebar-style browser built on Firefox.</p>
+        <div class="review">
+          <strong>My review</strong>
+          My favorite alternative to all the other browsers. It's like Arc but lighter, since it runs on Firefox. The only downside is that it's in beta, so it constantly has some bugs and errors.
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>B</span><img src="logos/brave.png" alt="" onerror="this.remove()"></div>
+        <h3>Brave</h3>
+        <p class="what">A Chrome-based browser with a built-in ad blocker.</p>
+        <div class="review">
+          <strong>My review</strong>
+          Lighter in many cases, but it sometimes has its own advertising.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Everyday browsing</h2>
+    <div class="grid">
+
+      <div class="app">
+        <div class="logo"><span>O</span><img src="logos/opera-one.png" alt="" onerror="this.remove()"></div>
+        <h3>Opera One</h3>
+        <p class="what">The default Opera browser.</p>
+        <div class="review">
+          <strong>My review</strong>
+          The default Opera, but it takes as much RAM as the two special Opera versions. Best for normal usage, though.
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>O</span><img src="logos/opera-air.png" alt="" onerror="this.remove()"></div>
+        <h3>Opera Air</h3>
+        <p class="what">Opera's calm, relaxed browser.</p>
+        <div class="review">
+          <strong>My review</strong>
+          Averages around 1.2 GB of RAM, but it feels light compared to how satisfying the app is to use.
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>A</span><img src="logos/arc.png" alt="" onerror="this.remove()"></div>
+        <h3>Arc</h3>
+        <p class="what">The browser that started the sidebar layout.</p>
+        <div class="review">
+          <strong>My review</strong>
+          Arc is the original of this layout, but it's heavier than Zen.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Gaming</h2>
+    <div class="grid">
+
+      <div class="app">
+        <div class="logo"><span>G</span><img src="logos/opera-gx.png" alt="" onerror="this.remove()"></div>
+        <h3>Opera GX</h3>
+        <p class="what">The gaming version of Opera.</p>
+        <div class="review">
+          <strong>My review</strong>
+          It's fine but not the best. It has a RAM limiter of up to 1.5 GB.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Heavy on RAM</h2>
+    <div class="grid">
+
+      <div class="app">
+        <div class="logo"><span>F</span><img src="logos/firefox.png" alt="" onerror="this.remove()"></div>
+        <h3>Firefox</h3>
+        <p class="what">The independent browser from Mozilla.</p>
+        <div class="review">
+          <strong>My review</strong>
+          Firefox seems light but isn't. It's heavy, at around 1000 MB.
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>C</span><img src="logos/chrome.png" alt="" onerror="this.remove()"></div>
+        <h3>Google Chrome</h3>
+        <p class="what">Google's browser.</p>
+        <div class="review">
+          <strong>My review</strong>
+          A RAM eater. It takes up so much RAM that even the internet hates it.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Still to review</h2>
+    <div class="grid">
+
+      <div class="app">
+        <div class="logo"><span>F</span><img src="logos/floorp.png" alt="" onerror="this.remove()"></div>
+        <h3>Floorp</h3>
+        <p class="what">Still to review.</p>
+        <div class="review"><strong>My review</strong>Review coming soon.</div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>V</span><img src="logos/vivaldi.png" alt="" onerror="this.remove()"></div>
+        <h3>Vivaldi</h3>
+        <p class="what">Still to review.</p>
+        <div class="review"><strong>My review</strong>Review coming soon.</div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>E</span><img src="logos/edge.png" alt="" onerror="this.remove()"></div>
+        <h3>Microsoft Edge</h3>
+        <p class="what">Still to review.</p>
+        <div class="review"><strong>My review</strong>Review coming soon.</div>
+      </div>
+
+      <div class="app">
+        <div class="logo"><span>H</span><img src="logos/helium.png" alt="" onerror="this.remove()"></div>
+        <h3>Helium</h3>
+        <p class="what">Still to review.</p>
+        <div class="review"><strong>My review</strong>Review coming soon.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <p id="empty" hidden>No browsers match that search.</p>
+</main>
+
+<script>
+  const sections = [...document.querySelectorAll('main section')];
+  const links = document.getElementById('links');
+
+  // Build the top menu from each section heading
+  sections.forEach(s => {
+    const title = s.querySelector('h2').textContent;
+    s.id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.textContent = title;
+    links.appendChild(a);
+  });
+
+  // Filter browsers as you type
+  const search = document.getElementById('search');
+  const empty = document.getElementById('empty');
+  search.addEventListener('input', () => {
+    const term = search.value.trim().toLowerCase();
+    let found = false;
+    sections.forEach(s => {
+      let count = 0;
+      s.querySelectorAll('.app').forEach(app => {
+        const match = app.textContent.toLowerCase().includes(term);
+        app.hidden = !match;
+        if (match) count++;
+      });
+      s.hidden = count === 0;
+      if (count) found = true;
+    });
+    empty.hidden = found;
+  });
+</script>
+</body>
+</html>
